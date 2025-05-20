@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Home2 from './pages/Home2';
 import Navbar from './components/Navbar';
 import bgImage from './assets/bg.avif';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -23,8 +25,11 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+           <Route path="/home2" element={<Home2 />} />
         </Routes>
+         <Footer/>
       </div>
+     
     </div>
   );
 };

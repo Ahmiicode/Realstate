@@ -36,48 +36,54 @@ const testimonials = [
 
 const Peoplesay = () => {
   return (
-    <div className="bg-gray-100 py-16 px-6">
+    <div className="bg-gray-100 py-16 px-4 sm:px-6">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">What People Say</h2>
-        <p className="text-gray-600 text-lg">Real experiences from our happy clients.</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">What People Say</h2>
+        <p className="text-gray-600 md:text-lg">Real experiences from our happy clients.</p>
       </div>
+<Swiper
+  slidesPerView={1}  // default: mobile and below 1024px
+  spaceBetween={30}
+  autoplay={{ delay: 3500 }}
+  modules={[Autoplay]}
+  loop={true}
+  className="max-w-6xl mx-auto"
+breakpoints={{
+  640: {
+    slidesPerView: 1,  // sm and md explicitly 1
+  },
+  1024: {
+    slidesPerView: 2,  // lg and up 2 slides
+  },
+}}
 
-      <Swiper
-        slidesPerView={2}
-        spaceBetween={30}
-        autoplay={{ delay: 3500 }}
-        modules={[Autoplay]}
-        loop={true}
-        className="max-w-6xl mx-auto"
-      >
-        {testimonials.map(({ id, name, comment, image,detail }) => (
+>
+
+        {testimonials.map(({ id, name, comment, image, detail }) => (
           <SwiperSlide key={id}>
-            <div className=' h-[200px]'>
-    <div className="relative h-[140px] bg-white  shadow-lg p-6 pb-12">
-              {/* Author image - bottom left outside */}
-              <img
-                src={image}
-                alt={name}
-                className="w-23 h-23 rounded-full absolute -bottom-8 border-4 border-white shadow-md"
-              />
+            <div className='mb-12'>  {/* Add margin for absolute positioned elements */}
+              <div className="relative bg-white shadow-lg p-6 pb-16 md:pb-12">
+                {/* Comment text */}
+                <p className="text-gray-700 text-base md:text-lg italic">{`"${comment}"`}</p>
 
-              {/* Author name badge - bottom right outside */}
-              <div className="absolute -bottom-5 text-blue-800 font-bold right-1 bg-white  px-3 py-1 text-lg rounded-lg shadow-lg">
-                {name}
-                <div className='text-gray-300 text-xl '>
-                    {detail }
+                {/* Author image */}
+                <img
+                  src={image}
+                  alt={name}
+                  className="w-20 h-20 rounded-full absolute -bottom-8 left-4 border-4 border-white shadow-md"
+                />
+
+                {/* Author name badge */}
+                <div className="absolute -bottom-5 right-4 md:right-6 bg-white px-4 py-2 rounded-lg shadow-lg">
+                  <div className="text-blue-800 font-bold text-base md:text-lg">
+                    {name}
+                  </div>
+                  <div className="text-gray-400 text-sm md:text-base">
+                    {detail}
+                  </div>
                 </div>
-                
-               
-                
               </div>
-              
-
-              {/* Comment text */}
-              <p className="text-gray-700 text-xl italic">{`"${comment}"`}</p>
             </div>
-            </div>
-
           </SwiperSlide>
         ))}
       </Swiper>
