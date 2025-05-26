@@ -5,6 +5,7 @@ import Home2 from './pages/Home2';
 import Navbar from './components/Navbar';
 import bgImage from './assets/bg.avif';
 import Footer from './components/Footer';
+import Home3 from './pages/Home3';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
            <Route path="/home2" element={<Home2 />} />
+           <Route path="/home3" element={<Home3 />} />
         </Routes>
          <Footer/>
       </div>

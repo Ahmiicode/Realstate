@@ -17,7 +17,7 @@ const Navbar = () => {
         subItems: [
           { name: "Home Version One", link: "/" },
           { name: "Home Version Two", link: "/home2" },
-          { name: "Home Version Three", link: "/home/section-3" },
+          { name: "Home Version Three", link: "/home3" },
           { name: "Home Version Four", link: "/home/section-4" },
           { name: "Home Version Five", link: "/home/section-5" }
         ]
