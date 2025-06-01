@@ -30,8 +30,8 @@ const Navbar = () => {
             name: "Property Listings",
             link: "/page1",
             subSections: [
-              { name: "All Properties", link: "/page1/section1" },
-              { name: "By Location", link: "/page1/section2" },
+              { name: "Style", link: "/listing" },
+              { name: "Style2", link: "/listing2" },
               { name: "By Price", link: "/page1/section3" },
               { name: "With Map", link: "/page1/section4" },
               { name: "With Filters", link: "/page1/section5" },

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaBed, FaBath, FaHome, FaMapMarkerAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import properties from '../../data/properties';
 
 const FeatureProperty = () => {
@@ -36,7 +37,7 @@ const FeatureProperty = () => {
     <div className="text-center bg-white p-6 overflow-x-hidden">
       <div className="flex justify-center">
         <span className="hidden lg:block w-60 mt-14 mr-4 border-t text-gray-400" />
-        <h1 className="text-3xl lg:text-4xl font-bold mb-2 mt-9">Feature Properties</h1>
+        <h1 className="text-3xl lg:text-4xl font-bold mb-2 mt-9">Similar Properties</h1>
         <span className="hidden lg:block w-60 mt-14 ml-4 border-t text-gray-400" />
       </div>
 
@@ -53,7 +54,14 @@ const FeatureProperty = () => {
           style={{ width: `${properties.length * 736}px` }}
         >
           {properties.map((property) => (
-            <DesktopCard key={property.id} property={property} />
+            <Link
+              key={property.id}
+               to={`/listing/${property.id}`}
+              className="flex-shrink-0"
+              aria-label={`View details for ${property.name}`}
+            >
+              <DesktopCard property={property} />
+            </Link>
           ))}
         </div>
       </div>
@@ -65,12 +73,14 @@ const FeatureProperty = () => {
       >
         <div className="flex space-x-4 max-w-6xl mx-auto">
           {properties.map((property) => (
-            <div
+            <Link
               key={property.id}
+              to={`/listing/${property.id}`}
               className="flex-shrink-0 w-80 scroll-snap-child"
+              aria-label={`View details for ${property.name}`}
             >
               <MobileCard property={property} />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -80,7 +90,7 @@ const FeatureProperty = () => {
 
 // Desktop Card Component
 const DesktopCard = ({ property }) => (
-  <div className="w-[720px] h-[700px] bg-white shadow-lg p-8 flex-shrink-0 flex flex-col">
+  <div className="w-[720px] h-[700px] bg-white shadow-lg p-8 flex-shrink-0 flex flex-col cursor-pointer hover:shadow-2xl transition-shadow duration-300">
     <img
       src={property.image}
       alt={property.name}
@@ -108,7 +118,7 @@ const DesktopCard = ({ property }) => (
 
 // Mobile Card Component
 const MobileCard = ({ property }) => (
-  <div className="w-full bg-white shadow-lg p-6">
+  <div className="w-full bg-white shadow-lg p-6 cursor-pointer hover:shadow-2xl transition-shadow duration-300">
     <img
       src={property.image}
       alt={property.name}
