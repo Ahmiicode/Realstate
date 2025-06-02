@@ -55,7 +55,7 @@ const Navbar = () => {
             name: "Agent",
             link: "/page3",
             subSections: [
-              { name: "All Agents", link: "/page3/section1" },
+              { name: "All Agents", link: "/agent" },
               { name: "Top Rated", link: "/page3/section2" },
               { name: "Contact Agent", link: "/page3/section3" }
             ]
