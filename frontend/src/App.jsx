@@ -5,8 +5,10 @@ import Home2 from './pages/Home2';
 import Home3 from './pages/Home3';
 import Listing from './pages/Listing';
 import Agent from './pages/Agent';
+import Agency from './pages/Agency';
 import ListingDetail from './pages/Listingdetail';
 import Agentdetail from './pages/Agentdetail';
+import Agencydetail from './pages/Agencydetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import bgImage from './assets/bg.avif';
@@ -34,7 +36,9 @@ const App = () => {
           <Route path="/listing" element={<Listing />} />
           <Route path="/listing/:id" element={<ListingDetail />} />
           <Route path="/agent" element={<Agent />} />
+          <Route path="/agency" element={<Agency />} />
           <Route path="/agent/:id" element={<Agentdetail />} />
+          <Route path="/agency/:id" element={<Agencydetail />} />
         </Routes>
 
         <Footer />

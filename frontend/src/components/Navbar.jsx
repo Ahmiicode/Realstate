@@ -30,7 +30,7 @@ const Navbar = () => {
             name: "Property Listings",
             link: "/page1",
             subSections: [
-              { name: "Style", link: "/listing" },
+              { name: "All Properties", link: "/listing" },
               { name: "Style2", link: "/listing2" },
               { name: "By Price", link: "/page1/section3" },
               { name: "With Map", link: "/page1/section4" },
@@ -64,7 +64,7 @@ const Navbar = () => {
             name: "Agency",
             link: "/page4",
             subSections: [
-              { name: "Agency List", link: "/page4/section1" },
+              { name: "All Agencies", link: "/agency" },
               { name: "Featured Agencies", link: "/page4/section2" },
               { name: "Join Us", link: "/page4/section3" }
             ]
