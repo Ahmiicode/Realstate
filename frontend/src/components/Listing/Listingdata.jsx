@@ -53,128 +53,134 @@ const Listing = () => {
     setFilteredData(results);
   };
 
-  const selectStyle =
-    'p-3 bg-white ml-4 border w-[420px] text-xl text-brown-300 px-4 py-4 bg-white border-gray-300';
+const selectStyle =
+  'p-3 bg-white border text-xl text-brown-300 px-4 py-4 border-gray-300 w-full sm:w-[420px]';
+
 
   return (
     <div className="max-w-screen-3xl bg-white mx-auto px-4 py-10">
       <div className="flex flex-col lg:flex-row gap-8">
-        {/* Filter Sidebar */}
-        <div className="lg:w-1/3 w-full p-6 rounded">
-          <form onSubmit={handleSearch} className="space-y-4">
-            <h1 className="p-9 text-center text-2xl border border-gray-300 font-semibold">
-              Property Filter
-            </h1>
+       {/* Filter Sidebar */}
+<div className="lg:w-1/3 w-full px-4 py-6">
+  <form onSubmit={handleSearch} className="space-y-6 bg-white rounded shadow-md p-6">
+    {/* Filter Header */}
+    <h1 className="text-center text-2xl font-semibold border-b pb-4">
+      Property Filter
+    </h1>
 
-            <select name="status" onChange={handleChange} className={selectStyle}>
-              <option value="">Property Status</option>
-              <option value="sale">For Sale</option>
-              <option value="rent">For Rent</option>
-            </select>
+    {/* Dropdowns */}
+    <select name="status" onChange={handleChange} className={selectStyle}>
+      <option value="">Property Status</option>
+      <option value="sale">For Sale</option>
+      <option value="rent">For Rent</option>
+    </select>
 
-            <select name="type" onChange={handleChange} className={selectStyle}>
-              <option value="">Property Type</option>
-              <option value="house">House</option>
-              <option value="apartment">Apartment</option>
-              <option value="villa">Villa</option>
-              <option value="office">Office</option>
-            </select>
+    <select name="type" onChange={handleChange} className={selectStyle}>
+      <option value="">Property Type</option>
+      <option value="house">House</option>
+      <option value="apartment">Apartment</option>
+      <option value="villa">Villa</option>
+      <option value="office">Office</option>
+    </select>
 
-            <select name="area" onChange={handleChange} className={selectStyle}>
-              <option value="">Area From</option>
-              <option value="500">500+</option>
-              <option value="1000">1000+</option>
-              <option value="2000">2000+</option>
-              <option value="5000">5000+</option>
-            </select>
+    <select name="area" onChange={handleChange} className={selectStyle}>
+      <option value="">Area From</option>
+      <option value="500">500+</option>
+      <option value="1000">1000+</option>
+      <option value="2000">2000+</option>
+      <option value="5000">5000+</option>
+    </select>
 
-            <select name="bedrooms" onChange={handleChange} className={selectStyle}>
-              <option value="">Bedrooms</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-            </select>
+    <select name="bedrooms" onChange={handleChange} className={selectStyle}>
+      <option value="">Bedrooms</option>
+      <option value="1">1+</option>
+      <option value="2">2+</option>
+      <option value="3">3+</option>
+      <option value="4">4+</option>
+    </select>
 
-            <select name="bathrooms" onChange={handleChange} className={selectStyle}>
-              <option value="">Bathrooms</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-            </select>
+    <select name="bathrooms" onChange={handleChange} className={selectStyle}>
+      <option value="">Bathrooms</option>
+      <option value="1">1+</option>
+      <option value="2">2+</option>
+      <option value="3">3+</option>
+      <option value="4">4+</option>
+    </select>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">
-                Max Price: ${parseInt(filters.priceRange).toLocaleString()}
-              </label>
-              <input
-                name="priceRange"
-                type="range"
-                min="100000"
-                max="6000000"
-                step="100000"
-                value={filters.priceRange}
-                onChange={handleChange}
-                className="w-full"
-              />
-            </div>
+    {/* Price Range */}
+    <div>
+      <label className="block text-sm font-medium text-gray-600 mb-1">
+        Max Price: ${parseInt(filters.priceRange).toLocaleString()}
+      </label>
+      <input
+        name="priceRange"
+        type="range"
+        min="100000"
+        max="6000000"
+        step="100000"
+        value={filters.priceRange}
+        onChange={handleChange}
+        className="w-full"
+      />
+    </div>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 text-lg rounded"
-            >
-              Search
-            </button>
+    {/* Submit Button */}
+    <button
+      type="submit"
+      className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 text-lg rounded"
+    >
+      Search
+    </button>
 
-            {/* Category Property Section */}
-            <div className="mt-10">
-              <h1 className="text-2xl font-semibold mb-4 text-center">Property Filter</h1>
-              <div className="flex flex-col gap-3 items-center">
-                {[
-                  { name: 'Residential', count: 12 },
-                  { name: 'Commercial', count: 5 },
-                  { name: 'Land', count: 8 },
-                  { name: 'Villa', count: 3 },
-                  { name: 'Office', count: 7 },
-                  { name: 'Apartment', count: 10 },
-                ].map(({ name, count }) => (
-                  <div
-                    key={name}
-                    className="w-[400px] p-4 border text-xl border-gray-300 rounded flex justify-between items-center cursor-pointer transition-transform duration-300 hover:translate-x-1"
-                  >
-                    <span>{name}</span>
-                    <span className="font-semibold px-2  rounded text-white bg-blue-800">{count}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+    {/* Category Property Section */}
+    <div className="mt-10">
+      <h2 className="text-2xl font-semibold mb-4 text-center">Categories</h2>
+      <div className="flex flex-col gap-3 items-center">
+        {[
+          { name: 'Residential', count: 12 },
+          { name: 'Commercial', count: 5 },
+          { name: 'Land', count: 8 },
+          { name: 'Villa', count: 3 },
+          { name: 'Office', count: 7 },
+          { name: 'Apartment', count: 10 },
+        ].map(({ name, count }) => (
+          <div
+            key={name}
+            className="w-full max-w-md p-4 border text-base sm:text-lg md:text-xl border-gray-300 rounded flex justify-between items-center cursor-pointer transition-transform duration-300 hover:translate-x-1"
+          >
+            <span>{name}</span>
+            <span className="font-semibold px-2 rounded text-white bg-blue-800">{count}</span>
+          </div>
+        ))}
+      </div>
+    </div>
 
-            {/* Property Attachment Section */}
-            <div className="mt-10">
-              <h2 className="text-lg font-semibold mb-4 text-center">Property Attachment</h2>
-              <div className="flex flex-col items-center gap-4">
-                <button
-                  type="button"
-                  className="flex items-center justify-between p-4 border border-gray-300 rounded w-[400px] hover:bg-blue-800 transition-colors cursor-pointer"
-                  onClick={() => alert('Download Document clicked')}
-                >
-                  <span className="text-3xl">📄</span>
-                  <span className="font-medium">Download Document</span>
-                </button>
+    {/* Property Attachment Section */}
+    <div className="mt-10">
+      <h2 className="text-lg font-semibold mb-4 text-center">Property Attachment</h2>
+      <div className="flex flex-col items-center gap-4">
+        <button
+          type="button"
+          className="flex items-center justify-between p-4 border border-gray-300 rounded w-full max-w-md hover:bg-blue-800 transition-colors cursor-pointer"
+          onClick={() => alert('Download Document clicked')}
+        >
+          <span className="text-3xl">📄</span>
+          <span className="font-medium">Download Document</span>
+        </button>
 
-                <button
-                  type="button"
-                  className="flex items-center justify-between p-4 border border-gray-300 rounded w-[400px] hover:bg-blue-800 transition-colors cursor-pointer"
-                  onClick={() => alert('Presentation clicked')}
-                >
-                  <span className="text-3xl">📊</span>
-                  <span className="font-medium">Presentation</span>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
+        <button
+          type="button"
+          className="flex items-center justify-between p-4 border border-gray-300 rounded w-full max-w-md hover:bg-blue-800 transition-colors cursor-pointer"
+          onClick={() => alert('Presentation clicked')}
+        >
+          <span className="text-3xl">📊</span>
+          <span className="font-medium">Presentation</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
 
         {/* Property Listings Section */}
         <div className="lg:w-2/3 w-full">

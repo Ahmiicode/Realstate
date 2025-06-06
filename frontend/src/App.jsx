@@ -6,12 +6,17 @@ import Home3 from './pages/Home3';
 import Listing from './pages/Listing';
 import Agent from './pages/Agent';
 import Agency from './pages/Agency';
+import About from './pages/About';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Contact from './pages/Contact';
 import ListingDetail from './pages/Listingdetail';
 import Agentdetail from './pages/Agentdetail';
 import Agencydetail from './pages/Agencydetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import bgImage from './assets/bg.avif';
+
 
 const App = () => {
   return (
@@ -34,11 +39,16 @@ const App = () => {
           <Route path="/home2" element={<Home2 />} />
           <Route path="/home3" element={<Home3 />} />
           <Route path="/listing" element={<Listing />} />
+          <Route path="/about" element={<About />} />
           <Route path="/listing/:id" element={<ListingDetail />} />
           <Route path="/agent" element={<Agent />} />
           <Route path="/agency" element={<Agency />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
           <Route path="/agent/:id" element={<Agentdetail />} />
           <Route path="/agency/:id" element={<Agencydetail />} />
+
         </Routes>
 
         <Footer />

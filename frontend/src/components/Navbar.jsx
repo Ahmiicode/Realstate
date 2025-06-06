@@ -69,10 +69,10 @@ const Navbar = () => {
               { name: "Join Us", link: "/page4/section3" }
             ]
           },
-          { name: "About Us", link: "/page5" },
-          { name: "Login", link: "/page6" },
-          { name: "Register", link: "/page7" },
-          { name: "Contact", link: "/page8" },
+          { name: "About Us", link: "/about" },
+          { name: "Login", link: "/login" },
+          { name: "Register", link: "/register" },
+          { name: "Contact", link: "/contact" },
           { name: "404 Error", link: "/page9" }
         ]
       },

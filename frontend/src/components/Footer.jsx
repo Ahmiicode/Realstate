@@ -1,20 +1,19 @@
 import React from 'react';
 import logo from '../assets/logo-blue-stiky.png';
-import footerBg from '../assets/footer.jpg';
+import footerBg from '../assets/footer2.jpg';
 
 const Footer = () => {
   return (
     <footer
-      className="relative text-white px-6 py-10 md:px-20 bg-cover bg-center bg-no-repeat"
+      className="relative text-white px-6 pt-10 md:px-20 bg-cover bg-center bg-no-repeat w-full"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
 
-      {/* Content */}
+      {/* Main Content */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 relative z-10">
-
-        {/* Logo & Company Info */}
+        {/* Logo & Info */}
         <div>
           <a href="/" className="block mb-4">
             <img src={logo} alt="Logo" width={170} height={100} />
@@ -34,20 +33,20 @@ const Footer = () => {
           <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2 text-gray-300">
             <li><a href="#" className="hover:underline hover:text-gray-100">Commercial</a></li>
-            <li><a href="#" className="hover:underline hover:text-gray-100">business</a></li>
+            <li><a href="#" className="hover:underline hover:text-gray-100">Business</a></li>
             <li><a href="#" className="hover:underline hover:text-gray-100">House</a></li>
             <li><a href="#" className="hover:underline hover:text-gray-100">Residential</a></li>
             <li><a href="#" className="hover:underline hover:text-gray-100">Residential Tower</a></li>
           </ul>
         </div>
 
-        {/* More Info or Links */}
+        {/* More Info */}
         <div>
           <h2 className="text-lg font-semibold mb-4">More Info</h2>
           <ul className="space-y-2 text-gray-300">
-            <li><a href="#" className="hover:underline hover:text-gray-100">The beach</a></li>
+            <li><a href="#" className="hover:underline hover:text-gray-100">The Beach</a></li>
             <li><a href="#" className="hover:underline hover:text-gray-100">Property Listing</a></li>
-            <li><a href="#" className="hover:underline hover:text-gray-100">Clasic</a></li>
+            <li><a href="#" className="hover:underline hover:text-gray-100">Classic</a></li>
             <li><a href="#" className="hover:underline hover:text-gray-100">Modern Home</a></li>
             <li><a href="#" className="hover:underline hover:text-gray-100">Beach Pasadena</a></li>
           </ul>
@@ -58,7 +57,6 @@ const Footer = () => {
           <h2 className="text-lg font-semibold mb-2">Follow Us</h2>
           <p className="mb-4 text-gray-300">Follow us and stay in touch to get the latest news</p>
           <div className="flex space-x-4 mb-4">
-            {/* Placeholder social icons */}
             <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center">F</span>
             <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center">T</span>
             <span className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center">I</span>
@@ -78,7 +76,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-10 border-t bg-black p-8 w-full border-white/30 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 relative z-10">
+      <div className="mt-10 border-t border-white/30 px-6 py-6 md:px-20 w-full flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 relative z-10">
         <p>© 2020 Rethouse Real Estate - Premium theme by retenvi.com</p>
         <div className="flex space-x-4 mt-2 md:mt-0">
           <a href="#" className="hover:underline hover:text-gray-200">Privacy</a>
@@ -92,3 +90,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
